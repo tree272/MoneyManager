@@ -8,7 +8,9 @@
 import UIKit
 
 class PaymentViewController: UIViewController {
-
+    var payment : Payment!
+    
+    
     let MAX_NUMBER: UInt = 9_999_999
     
     @IBOutlet weak var priceLabel: UILabel!
@@ -33,10 +35,14 @@ class PaymentViewController: UIViewController {
     //MARK: - button action
     
     @IBAction func priceButtonPressed(_ sender: UIButton) {
-        setPrice(UInt(sender.tag))
+        //面額按鈕是累加計算
+        setPrice(price + UInt(sender.tag))
     }
     
     @IBAction func addPayment(_ sender: UIButton) {
+       
+        
+        
     }
     
     @IBAction func cleanInput(_ sender: UIButton) {

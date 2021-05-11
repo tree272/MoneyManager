@@ -15,6 +15,8 @@
 		EA673A092640185E003D8A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA673A082640185E003D8A63 /* Assets.xcassets */; };
 		EA673A0C2640185E003D8A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA673A0A2640185E003D8A63 /* LaunchScreen.storyboard */; };
 		EADAF56D26454FB3009AB817 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADAF56C26454FB3009AB817 /* PaymentViewController.swift */; };
+		EADBA791264AC37100748A30 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBA790264AC37100748A30 /* ListTableViewController.swift */; };
+		EADBA795264AC4CD00748A30 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBA794264AC4CD00748A30 /* DatabaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EA673A0B2640185E003D8A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA673A0D2640185E003D8A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAF56C26454FB3009AB817 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		EADBA790264AC37100748A30 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		EADBA794264AC4CD00748A30 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		EA6739FB26401859003D8A63 /* moneyManager */ = {
 			isa = PBXGroup;
 			children = (
+				EADBA793264AC48100748A30 /* Model */,
 				EADAF56B26454F6C009AB817 /* Controller */,
 				EA673A1526415C4C003D8A63 /* view */,
 				EA6739FC26401859003D8A63 /* AppDelegate.swift */,
@@ -85,8 +90,17 @@
 			isa = PBXGroup;
 			children = (
 				EADAF56C26454FB3009AB817 /* PaymentViewController.swift */,
+				EADBA790264AC37100748A30 /* ListTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		EADBA793264AC48100748A30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EADBA794264AC4CD00748A30 /* DatabaseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +176,9 @@
 				EADAF56D26454FB3009AB817 /* PaymentViewController.swift in Sources */,
 				EA673A0726401859003D8A63 /* moneyManager.xcdatamodeld in Sources */,
 				EA673A0126401859003D8A63 /* ViewController.swift in Sources */,
+				EADBA791264AC37100748A30 /* ListTableViewController.swift in Sources */,
 				EA6739FD26401859003D8A63 /* AppDelegate.swift in Sources */,
+				EADBA795264AC4CD00748A30 /* DatabaseModel.swift in Sources */,
 				EA6739FF26401859003D8A63 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
