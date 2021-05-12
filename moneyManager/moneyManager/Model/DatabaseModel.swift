@@ -9,6 +9,12 @@ import Foundation
 import CoreData
 import UIKit
 
+//帳本類型：主帳本/副帳本
+enum Account: String {
+    case main
+    case secondary
+}
+
 class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
     var payment : [Payment] = []
     var income : [Income] = []
@@ -17,9 +23,10 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
     public func addAPayment(amount: UInt, categorize: Int, tag: Int, infomation: String) -> Bool {
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let paymentToAdd = Payment(context: appDelegate.persistentContainer.viewContext)
-            paymentToAdd.account = "Main"
+            paymentToAdd.account = Account.main.rawValue
             paymentToAdd.categorize = 1
-            paymentToAdd.date = NSDate(timeIntervalSinceNow: 0) as Date
+            paymentToAdd.tag = 1
+            paymentToAdd.date = Date().getCurrentLocationDate()
             paymentToAdd.amount = String(amount)
             paymentToAdd.infomation = ""
             print("Saving data to context ...")
@@ -30,7 +37,7 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
     
     func fetchPayment() {
         let fetchRequest: NSFetchRequest<Payment> = Payment.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {

@@ -8,8 +8,6 @@
 import UIKit
 
 class PaymentViewController: UIViewController {
-    var payment : Payment!
-    
     
     let MAX_NUMBER: UInt = 9_999_999
     
@@ -22,6 +20,8 @@ class PaymentViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    //檢查最大值
     func checkNumberLimit(_ p: UInt) -> UInt {
         guard p < MAX_NUMBER else { return MAX_NUMBER }
         return p
@@ -40,7 +40,13 @@ class PaymentViewController: UIViewController {
     }
     
     @IBAction func addPayment(_ sender: UIButton) {
-       
+        let adding = DatabaseModel().addAPayment(amount: price, categorize: 1, tag: 1, infomation: "早餐")
+        if adding {
+            print("success!")
+            dismiss(animated: true, completion: nil)
+        }else{
+            print("something wrong")
+        }
         
         
     }
