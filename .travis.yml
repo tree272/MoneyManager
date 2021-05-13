@@ -3,5 +3,5 @@ osx_image: xcode12.4
 before_install:
   - cd moneyManager
 script:
-  - xcodebuild -scheme moneyManager  -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=14.0' build
-  - xcodebuild -scheme moneyManager  -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' build
+  - xcodebuild -scheme moneyManager  -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=14.4' build
+  - xcodebuild -scheme moneyManager  -sdk iphonesimulator -destination 'platform:iOS Simulator, OS:13.0, name:iPhone 8' build
