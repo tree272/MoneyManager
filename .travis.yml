@@ -1,4 +1,5 @@
 language: swift
 osx_image: xcode12.4
-xcode_project: moneyManager/moneyManager.xcodeproj # path to your xcodeproj folder
-xcode_destination: platform=iOS Simulator,OS=14.0,name=iPhone SE (2nd generation)
+script:
+  - xcodebuild -scheme moneyManager  -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=14.0' build
+  - xcodebuild -scheme moneyManager  -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' build
