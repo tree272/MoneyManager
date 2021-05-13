@@ -15,6 +15,7 @@
 		EA673A092640185E003D8A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA673A082640185E003D8A63 /* Assets.xcassets */; };
 		EA673A0C2640185E003D8A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA673A0A2640185E003D8A63 /* LaunchScreen.storyboard */; };
 		EABCC572264BDC9200064181 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCC571264BDC9200064181 /* Date+Extension.swift */; };
+		EABCC57B264D0D2000064181 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCC57A264D0D2000064181 /* ListTableViewCell.swift */; };
 		EADAF56D26454FB3009AB817 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADAF56C26454FB3009AB817 /* PaymentViewController.swift */; };
 		EADBA791264AC37100748A30 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBA790264AC37100748A30 /* ListTableViewController.swift */; };
 		EADBA795264AC4CD00748A30 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBA794264AC4CD00748A30 /* DatabaseModel.swift */; };
@@ -31,6 +32,7 @@
 		EA673A0B2640185E003D8A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA673A0D2640185E003D8A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EABCC571264BDC9200064181 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		EABCC57A264D0D2000064181 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		EADAF56C26454FB3009AB817 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		EADBA790264AC37100748A30 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		EADBA794264AC4CD00748A30 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 				EA673A1526415C4C003D8A63 /* view */,
 				EA6739FC26401859003D8A63 /* AppDelegate.swift */,
 				EA6739FE26401859003D8A63 /* SceneDelegate.swift */,
-				EA673A0026401859003D8A63 /* ViewController.swift */,
 				EA673A0226401859003D8A63 /* Main.storyboard */,
 				EA673A082640185E003D8A63 /* Assets.xcassets */,
 				EA673A0A2640185E003D8A63 /* LaunchScreen.storyboard */,
@@ -85,6 +86,7 @@
 		EA673A1526415C4C003D8A63 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				EABCC57A264D0D2000064181 /* ListTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -100,6 +102,7 @@
 		EADAF56B26454F6C009AB817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EA673A0026401859003D8A63 /* ViewController.swift */,
 				EADAF56C26454FB3009AB817 /* PaymentViewController.swift */,
 				EADBA790264AC37100748A30 /* ListTableViewController.swift */,
 			);
@@ -189,6 +192,7 @@
 				EA673A0126401859003D8A63 /* ViewController.swift in Sources */,
 				EADBA791264AC37100748A30 /* ListTableViewController.swift in Sources */,
 				EA6739FD26401859003D8A63 /* AppDelegate.swift in Sources */,
+				EABCC57B264D0D2000064181 /* ListTableViewCell.swift in Sources */,
 				EABCC572264BDC9200064181 /* Date+Extension.swift in Sources */,
 				EADBA795264AC4CD00748A30 /* DatabaseModel.swift in Sources */,
 				EA6739FF26401859003D8A63 /* SceneDelegate.swift in Sources */,

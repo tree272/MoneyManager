@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Income" representedClassName="Income" syncable="YES" codeGenerationType="class">
-        <attribute name="account" optional="YES" attributeType="String"/>
-        <attribute name="amount" optional="YES" attributeType="String"/>
-        <attribute name="categorize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="account" attributeType="String"/>
+        <attribute name="amount" attributeType="String"/>
+        <attribute name="categorize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="infomation" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Payment" representedClassName="Payment" syncable="YES" codeGenerationType="class">
-        <attribute name="account" optional="YES" attributeType="String"/>
-        <attribute name="amount" optional="YES" attributeType="String"/>
-        <attribute name="categorize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="account" attributeType="String"/>
+        <attribute name="amount" attributeType="String"/>
+        <attribute name="categorize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="String"/>
         <attribute name="infomation" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>

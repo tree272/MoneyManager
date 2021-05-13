@@ -58,8 +58,8 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="addPayment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V3I-2B-W5F"/>
-                                            <segue destination="RkS-Cq-Pju" kind="show" id="kR1-X7-s5a"/>
+                                            <action selector="addPayment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3wf-sC-ArG"/>
+                                            <segue destination="RkS-Cq-Pju" kind="show" id="ZKf-QI-okR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mr0-23-24m">
@@ -89,7 +89,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRX-Ha-cJJ">
                                 <rect key="frame" x="0.0" y="148" width="414" height="605"/>
                                 <connections>
-                                    <segue destination="xIE-Ml-KlC" kind="embed" id="7Ir-A5-feG"/>
+                                    <segue destination="xIE-Ml-KlC" kind="embed" identifier="showAccountList" id="7Ir-A5-feG"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -188,22 +188,41 @@
             </objects>
             <point key="canvasLocation" x="1837.68115942029" y="811.60714285714278"/>
         </scene>
-        <!--Table View Controller-->
+        <!--List Table View Controller-->
         <scene sceneID="phh-xa-TSk">
             <objects>
-                <tableViewController id="xIE-Ml-KlC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListTableViewController" id="xIE-Ml-KlC" customClass="ListTableViewController" customModule="moneyManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dlV-Wp-IhH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="605"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nUa-rZ-yfs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" id="nUa-rZ-yfs" customClass="ListTableViewCell" customModule="moneyManager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nUa-rZ-yfs" id="iXq-oz-uFB">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-hC-1vu">
+                                            <rect key="frame" x="184" y="11" width="200" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="bhO-aG-kk3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="EDJ-hC-1vu" secondAttribute="trailing" constant="10" id="5sv-fZ-f6T"/>
+                                        <constraint firstItem="EDJ-hC-1vu" firstAttribute="top" secondItem="iXq-oz-uFB" secondAttribute="topMargin" id="GYf-Ns-JiJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EDJ-hC-1vu" secondAttribute="bottom" id="mut-TF-TPB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amountLabel" destination="EDJ-hC-1vu" id="5R5-1Z-0IW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -219,7 +238,7 @@
         <!--Payment View Controller-->
         <scene sceneID="zOj-Zf-d8h">
             <objects>
-                <viewController id="RkS-Cq-Pju" customClass="PaymentViewController" customModule="moneyManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentViewController" id="RkS-Cq-Pju" customClass="PaymentViewController" customModule="moneyManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bhD-wR-HwW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,6 +437,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addPayment:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="eVv-gT-6it"/>
+                                    <segue destination="c9Y-QA-YGO" kind="unwind" unwindAction="unwindToVC:" id="khu-qj-FsY"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-NQ-mt0" userLabel="tag View">
@@ -452,6 +472,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irb-H7-Tp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="c9Y-QA-YGO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2892.753623188406" y="73.660714285714278"/>
         </scene>

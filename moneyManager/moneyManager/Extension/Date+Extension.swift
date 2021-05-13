@@ -8,11 +8,22 @@
 import Foundation
 
 extension Date{
-    func getCurrentLocationDate() -> String {
+    
+    func getCurrentTimeByFormatter(format: String) -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        dateFormatter.dateFormat = format
         
         return dateFormatter.string(from: date)
     }
+    
+    
+    func getCurrentLocationDate() -> String {
+        return getCurrentTimeByFormatter(format: "yyyy/MM/dd HH:mm:ss")
+    }
+    
+    func getTodatDate() -> String {
+        return getCurrentTimeByFormatter(format: "yyyy/MM/dd")
+    }
+    
 }

@@ -43,11 +43,11 @@ class PaymentViewController: UIViewController {
         let adding = DatabaseModel().addAPayment(amount: price, categorize: 1, tag: 1, infomation: "早餐")
         if adding {
             print("success!")
-            dismiss(animated: true, completion: nil)
+            
         }else{
             print("something wrong")
         }
-        
+        dismiss(animated: true, completion: nil)
         
     }
     

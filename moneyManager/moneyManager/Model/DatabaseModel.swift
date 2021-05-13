@@ -19,6 +19,20 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
     var payment : [Payment] = []
     var income : [Income] = []
     var fetchResultController : NSFetchedResultsController<Payment>!
+    var context : NSManagedObjectContext!
+    
+    override init() {
+        super.init()
+        
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            context = appDelegate.persistentContainer.viewContext
+        }else{
+            print("get appDelegate fail")
+        }
+        fetchPayment()
+        
+    }
     
     public func addAPayment(amount: UInt, categorize: Int, tag: Int, infomation: String) -> Bool {
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -26,7 +40,7 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
             paymentToAdd.account = Account.main.rawValue
             paymentToAdd.categorize = 1
             paymentToAdd.tag = 1
-            paymentToAdd.date = Date().getCurrentLocationDate()
+            paymentToAdd.date = Date().getTodatDate()
             paymentToAdd.amount = String(amount)
             paymentToAdd.infomation = ""
             print("Saving data to context ...")
@@ -49,12 +63,38 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
                     payment = fetchedObjects
+                    print("fetch payment success")
                 }
             } catch {
                 print(error)
             }
         }
     }
+    
+    func fetchTodayPayment() -> [Payment] {
+        let fetchRequest = NSFetchRequest<Payment>(entityName: "Payment")
+        
+        let predicate = NSPredicate(format: "date like %@", Date().getTodatDate())
+        
+            fetchRequest.predicate = predicate
+
+        
+        do {
+            let results =
+                try context.fetch(fetchRequest)
+
+            for result in results {
+                print("\(result.value(forKey: "date")!) :\(result.value(forKey: "amount")!)")
+                
+            }
+            return results
+        } catch {
+            //fatalError("\(error)")
+        }
+        return []
+    }
+    
+    
     
     //MARK: - NSFetchedResultsController Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
