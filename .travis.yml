@@ -1,5 +1,4 @@
 language: swift
 osx_image: xcode12.4
 xcode_project: moneyManager/moneyManager.xcodeproj # path to your xcodeproj folder
-xcode_scheme: moneyManager
 xcode_destination: platform=iOS Simulator,OS=14.0,name=iPhone 12
