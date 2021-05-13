@@ -17,6 +17,8 @@ class ViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationItem.title = Date().getTodatDate()
+        
         loadTodayAmount()
     }
 
@@ -46,7 +48,7 @@ class ViewController: UIViewController  {
         for p in todayPayment {
             countAmount += Int(p.amount ?? "0") ?? 0
         }
-        totalLabel.text = "$ \(countAmount)"
+        totalLabel.text = "\(countAmount)"
         
         listTableViewController?.paymentList = dataModel.fetchTodayPayment()
         listTableViewController?.tableView.reloadData()

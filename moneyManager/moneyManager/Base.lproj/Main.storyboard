@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--2021/05/03-->
+        <!-- - -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="moneyManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwy-wx-uEb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Kl-Ie-3CI">
                                         <rect key="frame" x="10" y="0.0" width="394" height="60"/>
@@ -87,7 +87,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRX-Ha-cJJ">
-                                <rect key="frame" x="0.0" y="148" width="414" height="605"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="553"/>
                                 <connections>
                                     <segue destination="xIE-Ml-KlC" kind="embed" identifier="showAccountList" id="7Ir-A5-feG"/>
                                 </connections>
@@ -109,9 +109,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gaD-p0-7Mh"/>
-                    <navigationItem key="navigationItem" title="2021/05/03" id="1h4-by-ZCM">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="M0T-Pa-oR8"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="-" largeTitleDisplayMode="always" id="1h4-by-ZCM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="totalLabel" destination="sxb-J6-hxY" id="Pgd-Ra-ZbO"/>
@@ -127,9 +125,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v7C-6m-I98" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ThL-L6-m0f"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nta-R4-lqL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="nta-R4-lqL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -192,32 +193,50 @@
         <scene sceneID="phh-xa-TSk">
             <objects>
                 <tableViewController storyboardIdentifier="ListTableViewController" id="xIE-Ml-KlC" customClass="ListTableViewController" customModule="moneyManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dlV-Wp-IhH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="605"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dlV-Wp-IhH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" id="nUa-rZ-yfs" customClass="ListTableViewCell" customModule="moneyManager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nUa-rZ-yfs" id="iXq-oz-uFB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-hC-1vu">
-                                            <rect key="frame" x="184" y="11" width="200" height="21.5"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-iP-ety">
+                                            <rect key="frame" x="20" y="10" width="374" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-hC-1vu">
+                                                    <rect key="frame" x="164" y="14.5" width="200" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="UYs-Mn-fsD"/>
+                                                        <constraint firstAttribute="width" constant="200" id="bhO-aG-kk3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="ColorBlue1"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="bhO-aG-kk3"/>
+                                                <constraint firstItem="EDJ-hC-1vu" firstAttribute="centerY" secondItem="GxF-iP-ety" secondAttribute="centerY" id="D8S-i2-0Lg"/>
+                                                <constraint firstAttribute="height" constant="50" id="H0M-a8-lud"/>
+                                                <constraint firstAttribute="trailing" secondItem="EDJ-hC-1vu" secondAttribute="trailing" constant="10" id="Uo6-Dw-fvY"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="EDJ-hC-1vu" secondAttribute="trailing" constant="10" id="5sv-fZ-f6T"/>
-                                        <constraint firstItem="EDJ-hC-1vu" firstAttribute="top" secondItem="iXq-oz-uFB" secondAttribute="topMargin" id="GYf-Ns-JiJ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="EDJ-hC-1vu" secondAttribute="bottom" id="mut-TF-TPB"/>
+                                        <constraint firstAttribute="trailing" secondItem="GxF-iP-ety" secondAttribute="trailing" constant="20" id="1vB-H5-i9w"/>
+                                        <constraint firstItem="GxF-iP-ety" firstAttribute="top" secondItem="iXq-oz-uFB" secondAttribute="top" constant="10" id="316-6E-Os5"/>
+                                        <constraint firstItem="GxF-iP-ety" firstAttribute="leading" secondItem="iXq-oz-uFB" secondAttribute="leading" constant="20" id="M1g-I6-fkT"/>
+                                        <constraint firstAttribute="bottom" secondItem="GxF-iP-ety" secondAttribute="bottom" constant="10" id="dqK-r6-1vM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -233,7 +252,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="151-Bw-b9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2945" y="677"/>
+            <point key="canvasLocation" x="2944.9275362318845" y="676.67410714285711"/>
         </scene>
         <!--Payment View Controller-->
         <scene sceneID="zOj-Zf-d8h">
@@ -244,7 +263,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iok-WO-vSX" userLabel="total View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks7-Iu-sIx" userLabel="100">
                                         <rect key="frame" x="20" y="0.0" width="374" height="60"/>
@@ -441,7 +460,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-NQ-mt0" userLabel="tag View">
-                                <rect key="frame" x="0.0" y="148" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="160"/>
                                 <color key="backgroundColor" red="0.15663158806188007" green="0.46075821296146924" blue="0.74553102435487695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="PzI-Sz-eed"/>
