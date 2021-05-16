@@ -7,13 +7,16 @@
 
 import UIKit
 
+
+
 class PaymentViewController: UIViewController {
     
     let MAX_NUMBER: UInt = 9_999_999
     
     @IBOutlet weak var priceLabel: UILabel!
     var price: UInt = 0
-    
+    var categorizeSelected = 0 //0 = 沒有選擇
+    var selectingButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class PaymentViewController: UIViewController {
         price = checkNumberLimit(p)
         priceLabel.text = "$"+String(price)
     }
+
     
     //MARK: - button action
     
@@ -40,7 +44,17 @@ class PaymentViewController: UIViewController {
     }
     
     @IBAction func addPayment(_ sender: UIButton) {
-        let adding = DatabaseModel().addAPayment(amount: price, categorize: 1, tag: 1, infomation: "早餐")
+        
+        guard price > 0 else {
+            //TODO: show alert"請輸入金額"
+            return
+        }
+        guard categorizeSelected > 0 else {
+            //TODO: show alert"類型有沒有點選"
+            return
+        }
+        
+        let adding = DatabaseModel().addAPayment(amount: price, categorize: categorizeSelected, tag: 1, infomation: "")
         if adding {
             print("success!")
             
@@ -57,7 +71,17 @@ class PaymentViewController: UIViewController {
     @IBAction func addThreeZero(_ sender: UIButton) {
         setPrice(price * 1000)
     }
-
+    
+    @IBAction func categorizePressed(_ sender: UIButton) {
+        
+        selectingButton?.isSelected = false //把已點選的取消換現在要選的那顆
+        
+        categorizeSelected = sender.tag
+        selectingButton = sender
+        selectingButton?.isSelected = true
+    }
+    
+    
     /*
     // MARK: - Navigation
 

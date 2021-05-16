@@ -16,6 +16,7 @@
 		EA673A0C2640185E003D8A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA673A0A2640185E003D8A63 /* LaunchScreen.storyboard */; };
 		EABCC572264BDC9200064181 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCC571264BDC9200064181 /* Date+Extension.swift */; };
 		EABCC57B264D0D2000064181 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCC57A264D0D2000064181 /* ListTableViewCell.swift */; };
+		EABCC6192651550900064181 /* DeleteDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCC6182651550900064181 /* DeleteDataTableViewCell.swift */; };
 		EADAF56D26454FB3009AB817 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADAF56C26454FB3009AB817 /* PaymentViewController.swift */; };
 		EADBA791264AC37100748A30 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBA790264AC37100748A30 /* ListTableViewController.swift */; };
 		EADBA795264AC4CD00748A30 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBA794264AC4CD00748A30 /* DatabaseModel.swift */; };
@@ -33,6 +34,7 @@
 		EA673A0D2640185E003D8A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EABCC571264BDC9200064181 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		EABCC57A264D0D2000064181 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		EABCC6182651550900064181 /* DeleteDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDataTableViewCell.swift; sourceTree = "<group>"; };
 		EADAF56C26454FB3009AB817 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		EADBA790264AC37100748A30 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		EADBA794264AC4CD00748A30 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EABCC57A264D0D2000064181 /* ListTableViewCell.swift */,
+				EABCC6182651550900064181 /* DeleteDataTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABCC6192651550900064181 /* DeleteDataTableViewCell.swift in Sources */,
 				EADAF56D26454FB3009AB817 /* PaymentViewController.swift in Sources */,
 				EA673A0726401859003D8A63 /* moneyManager.xcdatamodeld in Sources */,
 				EA673A0126401859003D8A63 /* ViewController.swift in Sources */,

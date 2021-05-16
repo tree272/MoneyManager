@@ -21,14 +21,16 @@ class ViewController: UIViewController  {
         
         loadTodayAmount()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadTodayAmount()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //container view內的table view controller
 
         if segue.identifier == "showAccountList"{
             listTableViewController = segue.destination as? ListTableViewController
-            
         }
     }
     
@@ -40,8 +42,6 @@ class ViewController: UIViewController  {
     
     
     func loadTodayAmount() {
-        
-        
         todayPayment = dataModel.fetchTodayPayment()
         
         var countAmount = 0
@@ -53,6 +53,8 @@ class ViewController: UIViewController  {
         listTableViewController?.paymentList = dataModel.fetchTodayPayment()
         listTableViewController?.tableView.reloadData()
     }
+    //MARK: header view
+    //TODO: 日期切換功能
     
     
     //MARK: -Button action

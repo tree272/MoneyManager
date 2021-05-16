@@ -10,6 +10,8 @@ import UIKit
 class ListTableViewCell: UITableViewCell {
 
     @IBOutlet var amountLabel: UILabel!
+    @IBOutlet var categorizeLabel: UILabel!
+    @IBOutlet var tagLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,8 +20,8 @@ class ListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        //TODO:顯示單筆資料
     }
 
 }

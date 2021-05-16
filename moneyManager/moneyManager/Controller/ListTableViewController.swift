@@ -9,6 +9,8 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
 
+    // TODO:讓記帳種類可以自訂
+    let defaultCategorize = ["飲食","家用","服飾","交通","學習","娛樂","醫療","日用","斜槓","雜貨","寵物","社交","旅遊","備用","其他"] //對應tag:1~15
     var paymentList: [Payment]?
     var IncomeList : [Income]?
     
@@ -30,17 +32,39 @@ class ListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //清單是空則回傳1
         if let list = paymentList {
-            return list.count
+            return list.count > 0 ? list.count : 1
         }
-        return 0
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
-        let str = paymentList?[indexPath.row].amount ?? ""
-        cell.amountLabel?.text = "$ " + str
+        
+        if let list = paymentList {
+            if list.count > 0 {
+                let c = Int(paymentList?[indexPath.row].categorize ?? 0)
+                if c == 0 {
+                    cell.categorizeLabel.text = ""
+                }
+                else{
+                    cell.categorizeLabel.text = defaultCategorize[c-1]
+                }
+                //TODO: 實作tag功能後更換
+                cell.tagLabel.text = ""
+                let str = paymentList?[indexPath.row].amount ?? ""
+                cell.amountLabel?.text = "$ " + str
+            }else{
+                //今天還沒有記帳的話，顯示沒有資料
+                cell.categorizeLabel.text = ""
+                cell.tagLabel.text = ""
+                cell.amountLabel?.textAlignment = .center
+                cell.amountLabel?.text = "今天還沒記帳喔！"
+                
+            }
+        }
         return cell
     }
     

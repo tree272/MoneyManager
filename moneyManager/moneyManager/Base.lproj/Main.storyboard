@@ -39,7 +39,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.59932082890000005" green="0.736510098" blue="0.9358429909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="5Kl-Ie-3CI" firstAttribute="top" secondItem="fwy-wx-uEb" secondAttribute="top" id="HZV-xi-lHv"/>
                                     <constraint firstItem="5Kl-Ie-3CI" firstAttribute="leading" secondItem="fwy-wx-uEb" secondAttribute="leading" constant="10" id="MrD-3J-wwD"/>
@@ -53,9 +52,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-4U-8wX">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <state key="normal" title="新增支出">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="addPayment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3wf-sC-ArG"/>
@@ -64,9 +64,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mr0-23-24m">
                                         <rect key="frame" x="207" y="0.0" width="207" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <state key="normal" title="新增收入"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                        <state key="normal" title="新增收入">
+                                            <color key="titleColor" name="ColorBlue2"/>
+                                        </state>
                                         <connections>
                                             <action selector="addIncome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZT9-Uj-wmb"/>
                                         </connections>
@@ -119,11 +121,11 @@
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="73.660714285714278"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="KiU-eT-gpl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v7C-6m-I98" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ThL-L6-m0f"/>
+                    <tabBarItem key="tabBarItem" title="" image="list.bullet.rectangle" catalog="system" id="ThL-L6-m0f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="nta-R4-lqL">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -193,37 +195,59 @@
         <scene sceneID="phh-xa-TSk">
             <objects>
                 <tableViewController storyboardIdentifier="ListTableViewController" id="xIE-Ml-KlC" customClass="ListTableViewController" customModule="moneyManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dlV-Wp-IhH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dlV-Wp-IhH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" id="nUa-rZ-yfs" customClass="ListTableViewCell" customModule="moneyManager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                <rect key="frame" x="20" y="55.5" width="374" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nUa-rZ-yfs" id="iXq-oz-uFB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-iP-ety">
-                                            <rect key="frame" x="20" y="10" width="374" height="50"/>
+                                            <rect key="frame" x="20" y="10" width="334" height="50"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-hC-1vu">
-                                                    <rect key="frame" x="164" y="14.5" width="200" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-hC-1vu">
+                                                    <rect key="frame" x="0.0" y="13" width="324" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="UYs-Mn-fsD"/>
-                                                        <constraint firstAttribute="width" constant="200" id="bhO-aG-kk3"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Y-8g-xhh" userLabel="分類">
+                                                    <rect key="frame" x="5" y="0.0" width="60" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="NHe-Ur-rOx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJP-Ke-59t" userLabel="tag">
+                                                    <rect key="frame" x="75" y="0.0" width="60" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="e8h-8j-gqQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" name="ColorBlue1"/>
                                             <constraints>
+                                                <constraint firstItem="Z4Y-8g-xhh" firstAttribute="top" secondItem="GxF-iP-ety" secondAttribute="top" id="0Gy-c5-Zq0"/>
+                                                <constraint firstItem="Z4Y-8g-xhh" firstAttribute="leading" secondItem="GxF-iP-ety" secondAttribute="leading" constant="5" id="4bv-85-Lnw"/>
                                                 <constraint firstItem="EDJ-hC-1vu" firstAttribute="centerY" secondItem="GxF-iP-ety" secondAttribute="centerY" id="D8S-i2-0Lg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z4Y-8g-xhh" secondAttribute="bottom" id="ERh-yx-U2q"/>
                                                 <constraint firstAttribute="height" constant="50" id="H0M-a8-lud"/>
+                                                <constraint firstItem="UJP-Ke-59t" firstAttribute="top" secondItem="GxF-iP-ety" secondAttribute="top" id="Ian-M6-XYZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="UJP-Ke-59t" secondAttribute="bottom" id="Sw2-s6-L3T"/>
+                                                <constraint firstItem="UJP-Ke-59t" firstAttribute="leading" secondItem="Z4Y-8g-xhh" secondAttribute="trailing" constant="10" id="Ty3-Tf-iZ5"/>
                                                 <constraint firstAttribute="trailing" secondItem="EDJ-hC-1vu" secondAttribute="trailing" constant="10" id="Uo6-Dw-fvY"/>
+                                                <constraint firstItem="EDJ-hC-1vu" firstAttribute="leading" secondItem="GxF-iP-ety" secondAttribute="leading" id="s3d-qB-7tk"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -241,6 +265,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="amountLabel" destination="EDJ-hC-1vu" id="5R5-1Z-0IW"/>
+                                    <outlet property="categorizeLabel" destination="Z4Y-8g-xhh" id="bKM-TS-vTN"/>
+                                    <outlet property="tagLabel" destination="UJP-Ke-59t" id="i6D-I7-whI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -263,7 +289,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iok-WO-vSX" userLabel="total View">
-                                <rect key="frame" x="0.0" y="140" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks7-Iu-sIx" userLabel="100">
                                         <rect key="frame" x="20" y="0.0" width="374" height="60"/>
@@ -459,11 +485,217 @@
                                     <segue destination="c9Y-QA-YGO" kind="unwind" unwindAction="unwindToVC:" id="khu-qj-FsY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-NQ-mt0" userLabel="tag View">
-                                <rect key="frame" x="0.0" y="200" width="414" height="160"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-NQ-mt0" userLabel="categorize View">
+                                <rect key="frame" x="0.0" y="148" width="414" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GyF-Bk-Oo8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HyU-VT-uIy">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXe-Nq-a3c">
+                                                        <rect key="frame" x="0.0" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="飲食"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="Kbi-Mu-YL2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7D-48-9Po" userLabel="學習">
+                                                        <rect key="frame" x="83" y="7" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="家用"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="yIG-Qi-caR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qj-m7-3E2">
+                                                        <rect key="frame" x="165.5" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="服飾"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="FgC-pu-4ab"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-HR-V6N">
+                                                        <rect key="frame" x="248.5" y="7" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="交通"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="LEV-Cb-BMW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pws-0Y-oiW">
+                                                        <rect key="frame" x="331" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="學習"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="VYi-BD-bKR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OOU-cM-H35">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-xt-afO">
+                                                        <rect key="frame" x="0.0" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="娛樂"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="HwU-eW-FCc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVY-mT-h9q" userLabel="學習">
+                                                        <rect key="frame" x="83" y="7" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="醫療"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="yEZ-Rz-WQ6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-8w-uht">
+                                                        <rect key="frame" x="165.5" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="日用"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="W3R-lb-GAs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgr-R7-wE4">
+                                                        <rect key="frame" x="248.5" y="7" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="斜槓"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="8X6-sq-Rk9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-Ir-vTl">
+                                                        <rect key="frame" x="331" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="雜貨"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="9PO-z8-1SP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-Ip-2IJ">
+                                                <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8D-tD-w9H">
+                                                        <rect key="frame" x="0.0" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="寵物"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="YNa-dT-BGp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQk-gL-U25" userLabel="學習">
+                                                        <rect key="frame" x="83" y="7" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="社交"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="7mU-uk-NWJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No4-pr-acT">
+                                                        <rect key="frame" x="165.5" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="旅遊"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="OK2-lY-L6y"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCG-Bu-bsr">
+                                                        <rect key="frame" x="248.5" y="7" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="備用"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="DDT-8c-tpg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exK-Nf-G3K">
+                                                        <rect key="frame" x="331" y="7" width="83" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="其他"/>
+                                                        <state key="selected">
+                                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="categorizePressed:" destination="RkS-Cq-Pju" eventType="touchUpInside" id="Icn-bi-sY0"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.15663158806188007" green="0.46075821296146924" blue="0.74553102435487695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="PzI-Sz-eed"/>
+                                    <constraint firstAttribute="bottom" secondItem="GyF-Bk-Oo8" secondAttribute="bottom" id="1tD-LE-CRG"/>
+                                    <constraint firstItem="GyF-Bk-Oo8" firstAttribute="top" secondItem="7kw-NQ-mt0" secondAttribute="top" id="Cti-5T-I3F"/>
+                                    <constraint firstAttribute="trailing" secondItem="GyF-Bk-Oo8" secondAttribute="trailing" id="Dx7-I1-nbW"/>
+                                    <constraint firstAttribute="height" constant="150" id="PzI-Sz-eed"/>
+                                    <constraint firstItem="GyF-Bk-Oo8" firstAttribute="leading" secondItem="7kw-NQ-mt0" secondAttribute="leading" id="iAY-Nb-5xm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -485,7 +717,7 @@
                             <constraint firstItem="6KV-eh-NlC" firstAttribute="bottom" secondItem="czp-xO-3dO" secondAttribute="bottom" constant="15" id="uW1-Ee-Wbc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="F6g-sp-IZz"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="F6g-sp-IZz"/>
                     <connections>
                         <outlet property="priceLabel" destination="Ks7-Iu-sIx" id="rkA-0S-d90"/>
                     </connections>
@@ -500,6 +732,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IYx-CG-ych" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="77e-k1-mOh"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lz1-gv-sXw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -508,17 +741,18 @@
                     <connections>
                         <segue destination="v7C-6m-I98" kind="relationship" relationship="viewControllers" id="sYI-GY-LUN"/>
                         <segue destination="793-p0-PN3" kind="relationship" relationship="viewControllers" id="aWP-mt-fw7"/>
+                        <segue destination="fiA-VV-FWk" kind="relationship" relationship="viewControllers" id="VsU-6W-ecQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ska-pP-btw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="73.660714285714278"/>
         </scene>
-        <!--Item-->
+        <!--統計-->
         <scene sceneID="RiD-jY-C8J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="793-p0-PN3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UTx-Q4-prS"/>
+                    <tabBarItem key="tabBarItem" title="統計" image="chart.pie" catalog="system" id="UTx-Q4-prS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4gG-vk-xCa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -533,13 +767,109 @@
             </objects>
             <point key="canvasLocation" x="929" y="812"/>
         </scene>
+        <!--設定-->
+        <scene sceneID="JNO-WK-jJr">
+            <objects>
+                <tableViewController id="fiA-VV-FWk" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YJO-4M-y9d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <sections>
+                            <tableViewSection headerTitle="Section-1" id="LIc-QN-jyA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DeleteDataTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeleteDataTableViewCell" rowHeight="50" id="d7O-4t-ugN" customClass="DeleteDataTableViewCell" customModule="moneyManager" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7O-4t-ugN" id="m9f-Fh-7fe">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刪除資料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1A-w3-ysd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemPinkColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="l1A-w3-ysd" firstAttribute="leading" secondItem="m9f-Fh-7fe" secondAttribute="leading" id="OWH-zC-ExU"/>
+                                                <constraint firstAttribute="bottom" secondItem="l1A-w3-ysd" secondAttribute="bottom" id="fFW-pX-oMZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="l1A-w3-ysd" secondAttribute="trailing" id="j7p-oi-pGN"/>
+                                                <constraint firstItem="l1A-w3-ysd" firstAttribute="top" secondItem="m9f-Fh-7fe" secondAttribute="top" id="tQt-P9-XLM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fV0-gJ-eZr">
+                                        <rect key="frame" x="20" y="105.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fV0-gJ-eZr" id="jS9-R2-4yt">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DSI-gr-Qt8">
+                                        <rect key="frame" x="20" y="149" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DSI-gr-Qt8" id="Bqd-Zt-bAZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Section-2" id="as3-SS-rtk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Guc-d0-3qm">
+                                        <rect key="frame" x="20" y="248.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Guc-d0-3qm" id="jYe-KR-Nkb">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NAv-09-sPS">
+                                        <rect key="frame" x="20" y="292" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NAv-09-sPS" id="H8x-9w-guQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jhf-yk-YYS">
+                                        <rect key="frame" x="20" y="335.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jhf-yk-YYS" id="XsT-aB-AIs">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fiA-VV-FWk" id="dtf-TY-iHD"/>
+                            <outlet property="delegate" destination="fiA-VV-FWk" id="HX7-RN-PG2"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="設定" image="person.crop.circle" catalog="system" id="6lO-12-tuO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TdK-hl-kt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="1495"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chart.pie" catalog="system" width="128" height="121"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorBlue1">
             <color red="0.36100000143051147" green="0.63499999046325684" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorBlue2">
+            <color red="0.097000002861022949" green="0.3449999988079071" blue="0.56800001859664917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -547,8 +877,11 @@
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
