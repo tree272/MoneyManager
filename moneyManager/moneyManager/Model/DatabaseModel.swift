@@ -33,12 +33,12 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
         fetchPayment()
         
     }
-    
+    //MARK: - Add
     public func addAPayment(amount: UInt, categorize: Int, tag: Int, infomation: String) -> Bool {
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let paymentToAdd = Payment(context: appDelegate.persistentContainer.viewContext)
             paymentToAdd.account = Account.main.rawValue
-            paymentToAdd.categorize = 1
+            paymentToAdd.categorize = Int16(categorize)
             paymentToAdd.tag = 1
             paymentToAdd.date = Date().getTodatDate()
             paymentToAdd.amount = String(amount)
@@ -49,6 +49,7 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
         return true //一筆帳新增成功
     }
     
+    //MARK: - fetch
     func fetchPayment() {
         let fetchRequest: NSFetchRequest<Payment> = Payment.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -93,7 +94,24 @@ class DatabaseModel : NSObject, NSFetchedResultsControllerDelegate {
         }
         return []
     }
-    
+    //MARK: - Delete
+    func deleteAll() -> Bool {
+        //TODO: 實作刪除
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Payment")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            do {
+                try appDelegate.persistentContainer.persistentStoreCoordinator.execute(deleteRequest, with: context)
+            } catch let error as NSError {
+                // TODO: handle the error
+                print("DELETE FAIL :\(error)")
+                return false
+            }
+        }
+        print("DELETE SUCCESS!")
+        return true
+    }
     
     
     //MARK: - NSFetchedResultsController Delegate
